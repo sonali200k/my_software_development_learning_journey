@@ -3,21 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Table</title>
 </head>
 <body>
+    <header>
+        <h3>HTML5 Master Lab</h3>
+        <nav>
+            <a href="about.html" title="About">About</a>
+            <a href="index.html" title="Home">Home</a>
+            <a href="#tag" title="Tag">Tag</a>
+            <a href="#list" title="List">List</a>
+            <a href="#table" title="Table">Table</a> 
+            <a href="form/index.html" title="Forms">Forms</a>
+            <a href="#media" title="Media">Media</a>
+            <a href="#blog" title="Blog">Blog</a>
+            <a href="#rubric" title="Rubric">Rubric</a>
+        </nav>
+    </header>
+    <div>
+        <p><small>04 CURRICULUM UNIT • TABLES.HTML</small></p>
+        <h2>Module 04: Accessible Tables with Colspan & Rowspan</h2>
+        <p><small>Engineered tabular markup, multi-dimensional matrix headers, explicit scopes, and screen reader parity.</small></p>
+        <p><small>Matrix Workstation • Specification: W3C HTML 5.3 §4.9</small></p>
+    </div>
+    <div>
+        <p><small>04 CURRICULUM REFERENCE BLUEPRINT</small></p>
+        <h3>Visual Marking Standard</h3> 
+        <p><small>Review the lab specification sheet directly evaluated by automated AST test benches and instructor rubric audits for semantic compliance.</small></p>
+        <p>Artifact: Module-04-Spec.png</p>
+        <img src="../media/image.png" alt="Project Image" width="40%">
+    </div>
+    <div>
+        <h3>Colspan & Colgroup Architecture</h3>
+        <small>Horizontal spanning with scoped column metadata</small>
+        <table border="1" width="40%" cellspacing="5px" cellpadding="5">
+            <thead align="center">
+                <tr>
+                    <td colspan="8"><small><b>Table 4.1: Student Marksheet (Table with Colspan & Colgroup)</b></small></td>
+                </tr>
+                <tr>
+                    <td rowspan="2"><b>S.No</b></td>
+                    <td colspan="2"><b>Student Name</b></td>
+                    <td colspan="4"><b>Marks Obtained (Total 300)</b></td> 
+                    <td><b>Result</b></td> 
+                </tr>
+            </thead>
+            <tbody align="center">
+                <tr>
+                    <td>1</td>
+                    <td colspan="2">Rahul</td>
+                    <td>85</td>
+                    <td>90</td>
+                    <td>88</td>
+                    <td>263</td>
+                    <td>Pass</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td colspan="2">Priye</td>
+                    <td>78</td>
+                    <td>82</td>
+                    <td>80</td>
+                    <td>240</td>
+                    <td>Pass</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td colspan="2">Amit</td>
+                    <td>92</td>
+                    <td>95</td>
+                    <td>91</td>
+                    <td>278</td>
+                    <td>Pass</td>
+                </tr>
+                <tr>
+                    <td colspan="3" align="right"><b>Total (colspan="2")</b></td>
+                    <td>255</td>
+                    <td>267</td>
+                    <td>259</td>
+                    <td>781</td>
+                    <td>-</td>
+                </tr>
+            </tbody>
 
-    <nav>
-        <a href="index.html" title="Home">Home</a>
-        <a href="about.html" title="About">About</a>
-        
-        
-        
-        <a href="form" title="Forms">Forms</a>
-        <a href="list" title="List">List</a>
-        <a href="table" title="Table">Table</a> 
-        <a href="media" title="Media">Media</a>
-    </nav>
-    
+        </table>
+    </div>
+    <div>
+        <h3>Rowspan Matrix Topology</h3>
+        <small>Vertical span temporal slots across multiple periods</small>
+        <table border="1" cellspacing="5px" cellpadding="5" width="40%">
+            <thead align="center">
+                <tr>
+                    <td colspan="4" ><small><b>Table 4.2: Class Schedule (Rowspan Example)<small></b></td>
+                
+                </tr>
+                <tr>
+                    <td><b>Day</b></td>
+                    <td><b>Time Window</b></td>
+                    <td><b>Subject Curriculum</b></td>
+                    <td><b>Room / Lab</b></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="3"><b>Monday<b><br><small>3 Sessions</small></td>
+                    <td>09:00 – 10:00</td>
+                    <td>HTML5 Architecture</td> 
+                    <td>Lab Alpha</td>
+                </tr>
+                <tr>
+                    <td>10:00 – 11:00</td>
+                    <td>CSS3 Modern Layouts</td> 
+                    <td>Lab Alpha</td>
+                </tr>
+                <tr>
+                    <td>11:30 – 12:30</td>
+                    <td>JavaScript DOM Events</td> 
+                    <td>Lab Beta</td> 
+                </tr>
+                <tr>
+                    <td rowspan="2"><b>Tuesday<b><br><small>2 Sessions</small></td>
+                    <td>09:00 – 10:30</td>
+                    <td>Semantic Accessibility & WCAG</td> 
+                    <td>Room 204</td>
+                </tr>
+                <tr>
+                    <td>11:00 – 12:30</td>
+                    <td>Form Validation & Security</td> 
+                    <td>Room 204</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <h3>Colspan vs. Rowspan Mechanics</h3>
+        <p>Use <b>colspan</b> to stretch a single cell across multiple adjacent horizontal columns (e.g. grouped headers, subtotal summaries).</p>
+        <p>Use <b>rowspan</b> to stretch down across vertical time or category series. Never leave hanging cells: every rowspan reduces cell count in subsequent rows!</p>
+        <p><b><small>W3C Recommendation:<small></b><br>Verify total cells match column span counts per row to avoid table rendering glitches.</p>
+    </div>
+    <div>
+        <h3>The Critical Role of th scope></h3>
+        <p>Assistive technologies (NVDA, VoiceOver, JAWS) rely on scope="col|row|colgroup|rowgroup" to establish bidirectional context.</p>
+        <p>Without explicit scopes, visually impaired users navigating complex matrix grids lose track of what header labels apply to the active numerical data cell.</p>
+        <p><b><small>WCAG 2.1 Principle:</small></b><br>Criterion 1.3.1 Info and Relationships requires programmatic header association.</p>
+
+    </div>
+    <div>
+        <h3>Tables vs CSS Grid / Flexbox</h3>
+        <p>table> must <b>never</b> be utilized for website layout scaffolding. Tables tell screen readers: “This is correlated 2D relational data”.</p>
+        <p>Use Modern CSS Grid / Flexbox for application layout wrappers, navigation panels, and responsive device reflow.</p>
+        <p><b><small>Layout Anti-Pattern:</small></b><br>Layout tables break mobile responsiveness, responsive zooming, and tab sequence.</p>
+    </div>
+    <div>
+        <p><small>INTERACTIVE LAB WORKBENCH</small></p>
+        <h2>Dynamic Marksheet Evaluator & DOM Inspector</h2>
+        <p><small>Adjust live student marks to watch dynamic tfoot recalculations, DOM table updates, and screen reader markup generation in real time.</small><p>
+    </div>
 </body>
 </html>
