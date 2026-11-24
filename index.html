@@ -6,21 +6,172 @@
     <title>Home</title>
 </head>
 <body>
-
-    <nav>
-        <a href="index.html" title="Home">Home</a>
-        <a href="about.html" title="About">About</a>
-        
-        
-        
-        <a href="form" title="Forms">Forms</a>
-        <a href="list" title="List">List</a>
-        <a href="table" title="Table">Table</a> 
-        <a href="media" title="Media">Media</a>
-    </nav>
+    <header>
+        <h3>HTML5 Master Lab</h3>
+            <nav>
+                
+                <a href="index.html" title="Home">Home</a>
+                <a href="about.html" title="About">About</a>
+                <a href="form" title="Forms">Forms</a>
+                <a href="list" title="List">List</a>
+                <a href="table" title="Table">Table</a> 
+                <a href="media" title="Media">Media</a>
+            </nav>
+    </header>
     <section>
-        <h1>Welcome to Our Website</h1>
-        <p>This is the home page of our website. Explore the links above to learn more about us and our services.</p>
+        <div>
+            <h1>Learn HTML From Basic to Advanced</h1>
+            <p>A complete practice project to learn all HTML tags, elements, attributes, and their <br> usage. Built as an interactive workbench for rigorous hands-on pedagogy.</p>
+            <p>Explore Courses</p> 
+            <p>Take 3-Point Test</p>
+            <ul>
+                <li>100+ <small>Tags & Attributes</small></li>
+                <li>22<small>Form Input Controls</small></li>
+                <li>38<small>Assessment Checkpoints</small></li>
+            </ul>
+            <img src="media/image.png" alt="Project Media Image" width="30%" align="right">
+        </div>
+        <div>
+            <small>Modular Curriculum Paths</small>
+            <h3>Core Practice Streams</h3>
+            <small>Select a laboratory track to practice structural markup, form dynamics, <br> or full-scale multi-file semantic projects.</small>
+        </div>
+        <div>
+            <h3>HTML Basics</h3>
+            <p>Master tags, nested elements, inline vs block formatting, self-closing void tags, and root metadata setups.</p>
+            <pre>
+        > meta, title, link Head APIs
+        > Headings h1 h6 Hierarchy
+        > Void Elements (img, br, hr)</pre>
+            <a href="tags/index.html" alt="Explore Tags & Text">Explore Tags & Text</a>
+        </div>
+        <div>
+            <h3>Practice Examples&nbsp;<code>HOT<code></h3>
+            <p>Forms (All 22 Native Types), complex data tables with rowspan/colspan, embedded media audio/video, and interactive dialogs.</p>
+            <pre>
+        > All 22 Native input Variations
+        > Matrix Tables with colgroup
+        > HTML5 Native Media Players</pre>
+            <a href="form/index.html" alt="Explore 22 Forms Inputs">Explore 22 Form Inputs</a>
+        </div>
+        <div>
+            <h3>Complete Project</h3>
+            <p>Synthesize your markup into a cohesive 10-page interconnected website strictly conforming to semantic landmarks and WCAG standards.</p>
+            <pre>
+        > Semantic Layout (main, article)
+        > 10 Interlinked Document Graph
+        > Teacher Rubric & Validation</pre>
+            <a href="#index.html" alt="Inspect Blueprint Tree">Inspect Blueprint Tree</a>
+        </div>
+        <div>
+            <small>Structural Computer Science Foundations</small>
+            <h2>The Four Pillars of Web Markup</h2>
+            <p>Before authoring rich web applications, students must rigorously differentiate syntax containers, document <br> nodes, serialization tokens, and living memory properties.</p>
+        </div>
+        <div>
+            <p>PILLAR A &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;delimiter syntax</p>
+            <h3>What is a Tag?</h3>
+            <p>A tag is pure lexical markup syntax wrapped in angle brackets (tagname) instructing the HTML parser where content begins and ends. Tags are divided into Container tags (paired with closing tag) and Void tags (standalone elements that do not permit nested children).</p>
+            <pre>
+        SYNTAX COMPARISON                                              TOKEN LEXING
+        !-- Container Tag (Opening & Closing) --
+        This is parsed paragraph text.
+
+        !-- Void Elements (No child content permitted) --
+        img src="avatar.png" alt="Profile"
+        input type="text" name="username"
+        br hr meta charset="UTF-8"
+            </pre>
+        </div>
+        <div>
+            <p>PILLAR B &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;DOM Node Structure</p>
+            <h3>What is an Element?</h3>
+            <p>An element represents the entire logical entity: the opening tag, all internal character data, child tags, and the closing tag. In the browser memory space, each parsed element converts into an addressable DOM Node instance inheriting from HTMLElement.</p>
+            <pre>
+        DOCUMENT OBJECT TREE                                             MEMORY NODE
+        ┌── [HTMLElement: HTMLAnchorElement] ──────────────┐
+        │  Tags:     a href="/lab"> ... a>                 │
+        │  Children: [TextNode: "Launch Exercise"]         │
+        │  DOM API:  node.textContent, node.href           │
+        └──────────────────────────────────────────────────┘
+            </pre>
+        </div>
+        <div>
+            <p>PILLAR C &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;key="value" config</p>
+            <h3>What is an Attributet?</h3>
+            <p>Attributes are key-value modifiers written directly inside the opening tag. They configure initial element behaviors, identify DOM nodes (id, class), supply accessibility labels (aria-*), or store custom metadata (data-*).</p>
+            <pre>
+        DECLARATIVE MARKUP CONFIG                                       ATTRIBUTE SPEC
+        !-- Global & Specific Form Field Attributes --
+        input 
+        type="email" 
+        name="student_email" 
+        id="usr-email"
+        required 
+        placeholder="name@school.edu"
+        data-checkpoint="field-02"
+        />
+            </pre>
+        </div>
+        <div>
+            <p>PILLAR D &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Markup vs Runtime Engine</p>
+            <h3>Attribute vs. DOM Property</h3>
+            <p>Attributes are serialized in HTML text and initialize default states. Properties are live JavaScript object variables in memory. When a user types into an input, input.value (property) mutates continuously, but the serialized attribute remains unchanged unless updated via setAttribute().</p>
+            <pre>
+        LIVE DESYNCHRONIZATION DEMO                                     DOM RUNTIME
+        const el = document.querySelector('input');
+        // User types 'alex99' into the field:
+        console.log(el.getAttribute('value')); // null or initial 'default'
+        console.log(el.value);                // 'alex99' (Live Property)
+        // Live Boolean sync: el.checked vs el.hasAttribute('checked')
+            </pre>
+        </div>
+        <div>
+            <h3>Project Architecture Tree</h3>
+            <small>Every student laboratory clone generates this exact standardized file layout to complete all coursework milestones.</small>
+            <pre><small>
+        html-practice-suite/
+        ├──<small>html</small> index.html(Portal Entryway)
+        ├──<small>html</small> about.html(Biographical & Meta)
+        ├──<small>html</small> tags.html(Lexical Showcase)
+        ├──<small>html</small> lists.html(OL, UL, DL Trees)
+        ├──<small>html</small> tables.html(Spanning Matrix)
+        ├──<small>html</small> registration.html(22 Input Types)
+        ├──<small>html</small> gallery.html(Figure & Picture)
+        ├──<small>html</small> media.html(Audio, Video, Iframe)
+        ├──<small>html</small> blog.html(Full Semantic Blog)
+        └──<small>html</small> contact.html(Validation & Post)
+        Validated HTML5 File Manifest                                   10/10 Verified
+            </small></pre>
+        </div>
+        <div>
+            <h3>Key HTML Topics Covered in This Project</h3>
+            <p>Complete syllabus mapping aligned with collegiate and professional web developer competencies.</p>
+            <ol>
+                <li><b>Structure & Semantics</b><br><small>header>, main>, article>, aside>, footer></small></li>
+                <li><b>Text Formatting Suite</b><br><small>em>, strong>, mark>, sub>, sup>, blockquote></small></li>
+                <li><b>All List Architectures</b><br><small>Ordered nested numbers, Unordered disc/square, dl> pairs</small></li>
+                <li><b> Complex Matrix Tables</b><br><small>thead>, tbody>, tfoot>, rowspan & colspan spans</small></li>
+                <li><b>Native 22 Form Controls</b><br><small>Color, Date, Range, Tel, File, Datalist, Output, Search</small></li>
+                <li><b>Multimedia & Graphics</b><br><small>video>, audio> with tracks, picture>, svg>, canvas></small></li>
+                <li><b>Modern Dialog & Details</b><br><small>Native modal dialog> showModal() and details> summary></small></li>
+                <li><b>Accessibility & Validation</b><br><small>ARIA landmark roles, Alt accessibility, W3C clean audit</small></li>
+            </ol>
+            <p><b>Expected Outcome: Full Master Proficiency</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Grade: 100/100 (A+)</p>
+            <small>Ready to graduate to CSS Modern Layouts & ECMAScript programming.</small>
+        </div>
+        <div>
+            <pre>
+        HTML5 Master Practice Lab
+        DevLearn Academy standard practice workstations for semantic web markup, interactive form elements, visual media embedding, and W3C rubric evaluation.
+
+        verified
+        W3C HTML5 Validated
+        ECMAScript Standard
+            </pre>
+        <small>© 2025 DevLearn Academy. All rights reserved. Pedagogy Architecture & Assignment Validation Suite.</small>
+        </div>
+
     </section>
 </body>
 </html>
